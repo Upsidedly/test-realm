@@ -14,22 +14,39 @@
 
             function randomCheese() {
                 const cheeses = ['mozzarella', 'rattlesnake cheese', 'cheddar', 'roquefort', 'camembert', 'chevre', 'feta', 'emmental', 'gouda', 'gouda', 'taleggio', 'parmesan', 'parmigiano-reggiano', 'manchego', 'monterey jack', 'pepper jack', 'gruyere']
-                return ['roquefort', 'mozzarella', 'rattlesnake cheese', 'manchego'].sort((a, b) => Math.random() - 0.5)[0];
+                return [
+                    'roquefort',
+                    'mozzarella',
+                    'rattlesnake cheese',
+                    'manchego',
+                    'cheddar',
+                    'camembert'
+                ].sort((a, b) => Math.random() - 0.5)[0];
             }
 
             function generateCheese() {
                 if (debounce) return
-                debounce = true
 
-                const chezs = {
+                const cheeses = {
                     'mozzarella': 'images/mozz.jpg',
                     'rattlesnake cheese': 'images/rattle.jpg',
                     'roquefort': 'images/roquefort.jpg',
                     'manchego': 'images/manchego.jpeg',
+                    'cheddar': 'images/cheddar.webp',
+                    'camembert': 'images/camb.webp',
+                }
+                
+                const cheesefont = {
+                    'cheddar': 'Noto Sans',
+                    'manchego': 'Inconsolata',
+                    'mozzarella': 'Lato',
+                    'rattlesnake cheese': 'Noto Sans',
+                    'roquefort': 'Inconsolata',
+                    'camembert': 'DM Sans',
                 }
 
                 const pick = randomCheese();
-                const file = `${chezs[pick]}`
+                const file = `${cheeses[pick]}`
                 console.log(file)
 
                 var cheese = document.getElementById('cheese')
@@ -38,19 +55,19 @@
 
                 const cheesetype = document.getElementById('cheesetype')
                 cheesetype.style.display = 'block';
+                cheesetype.style.fontFamily = cheesefont[pick];
                 cheesetype.innerHTML = `you found ${pick}!`;
 
-                setTimeout(() => {
-                    cheese.style.animation = 'pop 0.3s'
+                cheese.style.animation = 'pop 0.3s'
+                setTimeout(() => { cheese.style.animation = 'none' }, 300)
 
-                    setTimeout(() => {
+                    /* setTimeout(() => {
                         cheese.style.display = 'none';
                         cheese.style.animation = '';
                         cheesetype.style.display = 'none';
 
                         debounce = false
-                    }, 1300)
-                }, 600)
+                    }, 1300) */
             }
         </script>
 
@@ -59,6 +76,5 @@
             <h1 id="cheesetype"></h1>
             <img id="cheese" width="500" height="500"></img>
         </div>
-        <div id="home" style="s"></div>
     </body>
 </html>

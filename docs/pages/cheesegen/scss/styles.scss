@@ -40,8 +40,13 @@ body {
 }
 
 #cheese {
-    margin: 1em;
+    margin: 2.5em;
     display: none;
+    border-radius: 1em;
+    box-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+    2px 0.1em rgba(0, 0, 0, 0.456);
 }
 
 #content {
@@ -59,7 +64,7 @@ body {
         font-family: 'Lato', sans-serif;
         font-size: 2em;
         color: #fff;
-        margin: 0;
+        margin: 1em;
         padding: 0;
     }
 }
