@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Inconsolata|DM+Sans");
+@-webkit-keyframes rainbow {
+  0% {
+    color: #e28585;
+  }
+  25% {
+    color: #faccad;
+  }
+  50% {
+    color: #d7e294;
+  }
+  75% {
+    color: #90a5e4;
+  }
+  100% {
+    color: #e28585;
+  }
+}
+@keyframes rainbow {
+  0% {
+    color: #e28585;
+  }
+  25% {
+    color: #faccad;
+  }
+  50% {
+    color: #d7e294;
+  }
+  75% {
+    color: #90a5e4;
+  }
+  100% {
+    color: #e28585;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #2e3237;
+}
+
+#content {
+  background-color: #2e3237;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#content h1 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.8em;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 0.5em;
+  -webkit-animation: rainbow 4s infinite;
+          animation: rainbow 4s infinite;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 0.1em rgba(0, 0, 0, 0.456);
+}
+
+#content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#content a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Noto Sans';
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 0.1em rgba(0, 0, 0, 0.456);
+}
+
+#content a:hover {
+  color: #70acff;
+  text-decoration: none;
+}
+/*# sourceMappingURL=styles.css.map */

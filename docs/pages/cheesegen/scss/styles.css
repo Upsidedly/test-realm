@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Inconsolata|DM+Sans");
+@-webkit-keyframes rainbow {
+  0% {
+    color: #e28585;
+  }
+  25% {
+    color: #faccad;
+  }
+  50% {
+    color: #d7e294;
+  }
+  75% {
+    color: #90a5e4;
+  }
+  100% {
+    color: #e28585;
+  }
+}
+@keyframes rainbow {
+  0% {
+    color: #e28585;
+  }
+  25% {
+    color: #faccad;
+  }
+  50% {
+    color: #d7e294;
+  }
+  75% {
+    color: #90a5e4;
+  }
+  100% {
+    color: #e28585;
+  }
+}
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#cheese {
+  margin: 1em;
+  display: none;
+}
+
+#content {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-color: #404550;
+}
+
+#content h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.touchbutton {
+  border: none;
+  background-color: #2c2e32;
+  color: white;
+  font-size: 1.3em;
+  font-family: 'DM Sans';
+  padding: 1em;
+  border-radius: 0.3em;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.touchbutton:hover {
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  font-size: 1.35em;
+  -webkit-animation: rainbow 2s infinite;
+          animation: rainbow 2s infinite;
+}
+
+.touchbutton:active {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  background-color: #191a1c;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  color: #dddd85;
+}
+/*# sourceMappingURL=styles.css.map */

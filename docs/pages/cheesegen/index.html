@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="scss/styles.css">
+    </head>
+    <body>
+        <script>
+            let debounce = false
+
+            function randomCheese() {
+                const cheeses = ['mozzarella', 'rattlesnake cheese', 'cheddar', 'roquefort', 'camembert', 'chevre', 'feta', 'emmental', 'gouda', 'gouda', 'taleggio', 'parmesan', 'parmigiano-reggiano', 'manchego', 'monterey jack', 'pepper jack', 'gruyere']
+                return ['roquefort', 'mozzarella', 'rattlesnake cheese', 'manchego'].sort((a, b) => Math.random() - 0.5)[0];
+            }
+
+            function generateCheese() {
+                if (debounce) return
+                debounce = true
+
+                const chezs = {
+                    'mozzarella': 'images/mozz.jpg',
+                    'rattlesnake cheese': 'images/rattle.jpg',
+                    'roquefort': 'images/roquefort.jpg',
+                    'manchego': 'images/manchego.jpeg',
+                }
+
+                const pick = randomCheese();
+                const file = `${chezs[pick]}`
+                console.log(file)
+
+                var cheese = document.getElementById('cheese')
+                cheese.style.display = 'block';
+                cheese.src = file;
+
+                const cheesetype = document.getElementById('cheesetype')
+                cheesetype.style.display = 'block';
+                cheesetype.innerHTML = `you found ${pick}!`;
+
+                setTimeout(() => {
+                    cheese.style.animation = 'pop 0.3s'
+
+                    setTimeout(() => {
+                        cheese.style.display = 'none';
+                        cheese.style.animation = '';
+                        cheesetype.style.display = 'none';
+
+                        debounce = false
+                    }, 1300)
+                }, 600)
+            }
+        </script>
+
+        <div id="content">
+            <button class="touchbutton" onclick="generateCheese()">generate cheese</button>
+            <h1 id="cheesetype"></h1>
+            <img id="cheese" width="500" height="500"></img>
+        </div>
+        <div id="home" style="s"></div>
+    </body>
+</html>
