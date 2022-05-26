@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.35em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        color: #e28585;
+    }
+    25% {
+        color: #faccad;
+    }
+    50% {
+        color: #d7e294;
+    }
+    75% {
+        color: #90a5e4;
+    }
+    100% {
+        color: #e28585;
+    }
+}
+
+
+#tohome {
+    display: block;
+    position: fixed;
+    top: 90vh;
+    left: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: 1em;
+    z-index: 9999;
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
+    2px 0.1em rgba(0, 0, 0, 0.456);
+
+    &::after {
+        padding: 0.5em;
+        font-family: 'Noto Sans';
+        content: 'go back home?';
+    }
+
+    &:hover {
+        color: #90a5e4;
+        animation: jump 0.5s;
+    }
+}

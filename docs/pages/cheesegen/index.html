@@ -7,6 +7,8 @@
         <meta name="description" content="haha cheese generation much funny very laugh">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="scss/styles.css">
+        <link rel="stylesheet" href="../../sass/additionals.css">
+        <script defer src="https://kit.fontawesome.com/2a1302debe.js" crossorigin=""></script>
     </head>
     <body>
         <script>
@@ -26,6 +28,7 @@
 
             function generateCheese() {
                 if (debounce) return
+                debounce = true
 
                 const cheeses = {
                     'mozzarella': 'images/mozz.jpg',
@@ -49,7 +52,7 @@
                 const file = `${cheeses[pick]}`
                 console.log(file)
 
-                var cheese = document.getElementById('cheese')
+                const cheese = document.getElementById('cheese')
                 cheese.style.display = 'block';
                 cheese.src = file;
 
@@ -59,7 +62,7 @@
                 cheesetype.innerHTML = `you found ${pick}!`;
 
                 cheese.style.animation = 'pop 0.3s'
-                setTimeout(() => { cheese.style.animation = 'none' }, 300)
+                setTimeout(() => { cheese.style.animation = 'none'; debounce = false }, 300)
 
                     /* setTimeout(() => {
                         cheese.style.display = 'none';
@@ -72,9 +75,11 @@
         </script>
 
         <div id="content">
-            <button class="touchbutton" onclick="generateCheese()">generate cheese</button>
+            <button class="touchbutton" onclick="generateCheese()" id="chezbutton">generate cheese</button>
             <h1 id="cheesetype"></h1>
-            <img id="cheese" width="500" height="500"></img>
+            <img id="cheese"></img>
         </div>
+
+        <a id="tohome" href="../../"><i class="fa-solid fa-house"></i></a>
     </body>
 </html>
